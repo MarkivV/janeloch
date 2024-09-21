@@ -23,6 +23,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Clock, Mail } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -36,8 +37,10 @@ const formSchema = z.object({
   message: z.string(),
 });
 
+export type FormSchema = z.infer<typeof formSchema>;
+
 export const ContactSection = () => {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       firstName: "",
@@ -48,16 +51,31 @@ export const ContactSection = () => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    const { firstName, lastName, email, plan, message } = values;
+  const { toast } = useToast();
 
-    const mailToLink = `mailto:info@seventonssoftware.com?plan=${plan}&body=Hello I am ${firstName} ${lastName}, my email is ${email}. %0D%0A${message}`;
-
-    window.location.href = mailToLink;
+  async function onSubmit(values: FormSchema) {
+    toast({
+      title: "Loading...",
+    });
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      body: JSON.stringify(values),
+    });
+    if (res.ok) {
+      form.reset();
+      toast({
+        title: "Message sent successfully.",
+        description: "We will get back to you soon.",
+      });
+    } else {
+      form.setError("email", {
+        message: "An error occurred while sending the message.",
+      });
+    }
   }
 
   return (
-    <section id="contact" className="container py-16 sm:py-24">
+    <section id="contact" className="container py-12 sm:py-16">
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <div className="mb-4">

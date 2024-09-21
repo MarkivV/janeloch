@@ -2,7 +2,7 @@ export const BenefitsSection = () => {
   return (
     <div className="relative">
       <div className="absolute inset-x-0 top-0 w-full h-[600px] bg-gradient-to-b from-black"></div>
-      <section id="benefits" className="container py-16 sm:py-24 relative">
+      <section id="benefits" className="container py-12 sm:py-16 relative">
         <div className="flex">
           <div className="flex-1 hidden sm:block">
             <h2 className="text-4xl font-bold sticky top-24">

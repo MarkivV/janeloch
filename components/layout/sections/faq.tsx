@@ -8,27 +8,56 @@ import {
 interface FAQProps {
   question: string;
   answer: string;
-  value: string;
 }
 
 const FAQList: FAQProps[] = [
   {
-    question: "What industries do you specialize in?",
+    question: "What services does your company provide?",
+
     answer:
-      "We work with a variety of industries, including e-commerce, healthcare, finance, manufacturing, and more.",
-    value: "item-1",
+      "We specialize in data cleaning, analysis, reporting, data visualization (dashboards), data integration, automation of repetitive tasks, and custom data solutions. Our goal is to help small businesses manage and leverage their data effectively.",
   },
+
   {
-    question: "How does your pricing work?",
+    question: "How does data cleaning work?",
+
     answer:
-      "We offer tiered pricing plans to suit different business needs. Custom solutions are also available upon request.",
-    value: "item-2",
+      "We remove duplicates, correct errors, standardize formats, and ensure your data is accurate and ready for analysis. Clean data improves reporting accuracy and helps you make better business decisions.",
   },
+
   {
-    question: "Can I upgrade my plan later?",
+    question: "What types of data sources can you integrate?",
+
     answer:
-      "Yes, you can upgrade or modify your plan at any time. Please contact our support team for assistance.",
-    value: "item-3",
+      "We can integrate data from various platforms, including CRMs, e-commerce systems, financial tools, marketing platforms, and more. Our automation solutions ensure seamless data flow between systems for better analysis.",
+  },
+
+  {
+    question: "Do I need technical knowledge to use your services?",
+
+    answer:
+      "No, you don’t need any technical expertise. We handle all the setup, integration, and automation processes. You simply tell us your requirements, and we deliver the results.",
+  },
+
+  {
+    question: "How often are reports and dashboards updated?",
+
+    answer:
+      "Depending on your needs, reports and dashboards can be updated in real-time, daily, weekly, or monthly. We customize the frequency based on your business requirements.",
+  },
+
+  {
+    question: "How do I get started with your services?",
+
+    answer:
+      "Getting started is easy. Simply contact us through our website, and we’ll arrange a consultation to discuss your needs. Afterward, we’ll provide a tailored solution and pricing based on your requirements.",
+  },
+
+  {
+    question: "What industries do you work with?",
+
+    answer:
+      "We primarily work with small businesses across a variety of industries, including retail, e-commerce, healthcare, consulting, and more. Our flexible solutions can be adapted to fit any industry’s data needs.",
   },
 ];
 
@@ -46,8 +75,8 @@ export const FAQSection = () => {
       </div>
 
       <Accordion type="single" collapsible className="AccordionRoot">
-        {FAQList.map(({ question, answer, value }) => (
-          <AccordionItem key={value} value={value}>
+        {FAQList.map(({ question, answer }) => (
+          <AccordionItem key={answer} value={answer}>
             <AccordionTrigger className="text-left">
               {question}
             </AccordionTrigger>
