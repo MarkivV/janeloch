@@ -137,7 +137,7 @@ export const PricingSection = () => {
 
   return (
     <div>
-      <section className="container py-12 sm:py-16">
+      <section className="container z-10 py-12 sm:py-16">
         <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
           Pricing
         </h2>
@@ -150,61 +150,90 @@ export const PricingSection = () => {
           Choose the plan that best fits your business needs.
         </h3>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4">
-          {plans.map(
-            ({
-              title,
-              popular,
-              price,
-              description,
-              buttonText,
-              benefitList,
-            }) => (
-              <Card
-                key={title}
-                className={
-                  popular === PopularPlan?.YES
-                    ? "drop-shadow-xl shadow-black/10 dark:shadow-white/10 border-[1.5px] border-primary lg:scale-[1.1]"
-                    : ""
-                }
-              >
-                <CardHeader>
-                  <CardTitle className="pb-2">{title}</CardTitle>
+        <div className="relative">
+          <div className="grid z-10 relative md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4">
+            {plans.map(
+              ({
+                title,
+                popular,
+                price,
+                description,
+                buttonText,
+                benefitList,
+              }) => (
+                <Card
+                  key={title}
+                  className={
+                    popular === PopularPlan?.YES
+                      ? "drop-shadow-xl shadow-black/10 glassomorphism dark:shadow-white/10 border-[1.5px] border-primary lg:scale-[1.1]"
+                      : "glassomorphism"
+                  }
+                  style={{
+                    background: "rgba(0, 0, 0, 0.8)",
+                  }}
+                >
+                  <CardHeader>
+                    <CardTitle className="pb-2">{title}</CardTitle>
 
-                  <CardDescription className="pb-4">
-                    {description}
-                  </CardDescription>
+                    <CardDescription className="pb-4">
+                      {description}
+                    </CardDescription>
 
-                  <div>
-                    <span className="text-3xl font-bold">${price}</span>
-                    <span className="text-muted-foreground"> /month</span>
-                  </div>
-                </CardHeader>
+                    <div>
+                      <span className="text-3xl font-bold">${price}</span>
+                      <span className="text-muted-foreground"> /month</span>
+                    </div>
+                  </CardHeader>
 
-                <CardContent className="flex">
-                  <div className="space-y-4">
-                    {benefitList.map((benefit) => (
-                      <span key={benefit} className="flex">
-                        <Check className="text-primary mr-2" />
-                        <h3>{benefit}</h3>
-                      </span>
-                    ))}
-                  </div>
-                </CardContent>
+                  <CardContent className="flex">
+                    <div className="space-y-4">
+                      {benefitList.map((benefit) => (
+                        <span key={benefit} className="flex">
+                          <Check className="text-primary mr-2" />
+                          <h3>{benefit}</h3>
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
 
-                <CardFooter>
-                  <Button
-                    variant={
-                      popular === PopularPlan?.YES ? "default" : "secondary"
-                    }
-                    className="w-full"
-                  >
-                    {buttonText}
-                  </Button>
-                </CardFooter>
-              </Card>
-            )
-          )}
+                  <CardFooter>
+                    <Button
+                      variant={
+                        popular === PopularPlan?.YES ? "default" : "secondary"
+                      }
+                      className="w-full"
+                    >
+                      {buttonText}
+                    </Button>
+                  </CardFooter>
+                </Card>
+              )
+            )}
+          </div>
+          <div className="absolute inset-0 lg:flex hidden items-center justify-center">
+            <div
+              className="h-[190px] w-[1200px] relative rotate-[-15deg] rounded-2xl"
+              style={{
+                backgroundImage:
+                  "repeating-conic-gradient(rgba(255,255,255,0.9) 0% 25%, rgba(0,0,0,0) 0% 50%)",
+                backgroundPosition: "0 0, 70px 70px",
+                backgroundSize: "100px 100px",
+                backgroundColor: "#000000",
+              }}
+            ></div>
+          </div>
+          <div className="absolute inset-0 lg:flex hidden items-center justify-center">
+            <div
+              className="h-[190px] w-[1200px] relative rotate-[15deg] rounded-2xl"
+              style={{
+                backgroundImage:
+                  "repeating-conic-gradient(rgba(255,255,255,0.9) 0% 25%, rgba(0,0,0,0) 0% 50%)",
+                backgroundPosition: "0 0, 70px 70px",
+                backgroundSize: "100px 100px",
+                backgroundColor: "#000000",
+              }}
+            ></div>
+          </div>
         </div>
       </section>
       <div className="container mx-auto px-4 py-16">
