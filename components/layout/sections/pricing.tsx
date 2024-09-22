@@ -33,52 +33,52 @@ interface PlanProps {
 const services = [
   {
     service: "Data Cleaning",
-    description: "Ensure your data is accurate and reliable.",
+    description: "Ensure your data is accurate and reliable",
     price: "Starting at $250 per data source",
   },
   {
     service: "Data Integration",
-    description: "Combine data from multiple sources into a unified view.",
+    description: "Combine data from multiple sources into a unified view",
     price: "Starting at $400 per integration",
   },
   {
     service: "Data Analysis",
-    description: "In-depth analysis to uncover insights and trends.",
+    description: "In-depth analysis to uncover insights and trends",
     price: "Starting at $500 per project",
   },
   {
     service: "Interactive Dashboards",
-    description: "Custom dashboards for real-time data visualization.",
+    description: "Custom dashboards for real-time data visualization",
     price: "Starting at $600 per dashboard",
   },
   {
     service: "Automation Services",
-    description: "Automate repetitive tasks to improve efficiency.",
+    description: "Automate repetitive tasks to improve efficiency",
     price: "Starting at $750 per process",
   },
   {
     service: "Custom Software Development",
-    description: "Tailored software solutions for your unique needs.",
+    description: "Tailored software solutions for your unique needs",
     price: "Starting at $1,000 per project",
   },
   {
     service: "Consultation Services",
-    description: "Expert advice on data strategy and management.",
+    description: "Expert advice on data strategy and management",
     price: "$100 per hour",
   },
   {
     service: "Data Audit",
-    description: "Comprehensive review of your data infrastructure.",
+    description: "Comprehensive review of your data infrastructure",
     price: "$500 per audit",
   },
   {
     service: "Training and Workshops",
-    description: "On-site or virtual sessions to empower your team.",
+    description: "On-site or virtual sessions to empower your team",
     price: "Starting at $300 per session",
   },
   {
     service: "Technical Support",
-    description: "One-time assistance and troubleshooting.",
+    description: "One-time assistance and troubleshooting",
     price: "$75 per incident",
   },
 ];
@@ -108,7 +108,7 @@ const plans: PlanProps[] = [
       "Comprehensive Data Integration",
       "Bi-weekly Reports",
       "1 Automation Process",
-      "Priority Support",
+      "Interactive Dashboard",
     ],
   },
   {
@@ -116,13 +116,13 @@ const plans: PlanProps[] = [
     popular: 0,
     price: "from $699",
     description: "",
-    buttonText: "Contact US",
+    buttonText: "Get started",
     benefitList: [
       "Comprehensive Data Management",
       "Full Data Integration",
-      "Weekly Reports",
+      "On-demand BI Reports",
       "Up to 3 Automation Processes",
-      "Dedicated Support",
+      "Interactive Dashboards",
     ],
   },
 ];
@@ -179,35 +179,35 @@ export const PricingSection = () => {
   const allServices = [
     {
       label: "Data Cleaning",
-      description: "Ensure your data is accurate and reliable.",
+      description: "Ensure your data is accurate and reliable",
     },
     {
       label: "Data Integration",
-      description: "Combine data from multiple sources into a unified view.",
+      description: "Combine data from multiple sources into a unified view",
     },
     {
       label: "Data Analysis",
-      description: "In-depth analysis to uncover insights and trends.",
+      description: "In-depth analysis to uncover insights and trends",
     },
     {
       label: "Interactive Dashboards",
-      description: "Custom dashboards for real-time data visualization.",
+      description: "Custom dashboards for real-time data visualization",
     },
     {
       label: "Automation Services",
-      description: "Automate repetitive tasks to improve efficiency.",
+      description: "Automate repetitive tasks to improve efficiency",
     },
     {
       label: "Custom Software Development",
-      description: "Tailored software solutions for your unique needs.",
+      description: "Tailored software solutions for your unique needs",
     },
     {
       label: "Consultation Services",
-      description: "Expert advice on data strategy and management.",
+      description: "Expert advice on data strategy and management",
     },
     {
       label: "Data Audit",
-      description: "Comprehensive review of your data infrastructure.",
+      description: "Comprehensive review of your data infrastructure",
     },
   ];
 
@@ -223,7 +223,7 @@ export const PricingSection = () => {
         </h2>
 
         <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground pb-14">
-          Choose the plan that best fits your business needs.
+          Choose the plan that best fits your business needs
         </h3>
 
         <div className="relative">
@@ -403,7 +403,7 @@ export const PricingSection = () => {
             are also budget-friendly. At SevenTons Software, we&apos;re
             committed to offering cost-effective solutions without compromising
             on excellence. Below is our updated pricing table with more
-            affordable rates to better accommodate your needs.
+            affordable rates to better accommodate your needs
           </h4>
           <div className="my-4 overflow-x-auto">
             <table className="w-full border-collapse" role="table">
@@ -433,7 +433,7 @@ export const PricingSection = () => {
               <strong className="text-lg">Customization Available</strong>
               <p className="text-white text-opacity-60">
                 Prices listed are starting points. Final pricing may vary based
-                on the complexity and scope of your project.
+                on the complexity and scope of your project
               </p>
             </div>
             <div>
@@ -441,13 +441,13 @@ export const PricingSection = () => {
               <p className="text-white text-opacity-60">
                 Save more by combining multiple services. Contact us for a
                 personalized package. Flexible Payment Terms: We offer flexible
-                payment options to suit your budget.
+                payment options to suit your budget
               </p>
             </div>
             <div>
               <strong className="text-lg">Taxes</strong>
               <p className="text-white text-opacity-60">
-                All prices are in USD. Taxes may apply based on your location.
+                All prices are in USD. Taxes may apply based on your location
               </p>
             </div>
           </div>
