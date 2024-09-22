@@ -19,7 +19,7 @@ export const metadata = {
       "SevenTons Software offers affordable data management and automation for small and medium businesses. Unlock insights, automate processes, and grow with our cost-effective solutions",
     images: [
       {
-        url: "/seventons2.png",
+        url: "./seventons2.png",
         width: 1200,
         height: 630,
         alt: "Seventons Software",
@@ -34,7 +34,7 @@ export const metadata = {
       "SevenTons Software offers affordable data management and automation for small and medium businesses. Unlock insights, automate processes, and grow with our cost-effective solutions",
     images: [
       {
-        url: "/seventons2.png",
+        url: "./seventons2.png",
         width: 1200,
         height: 630,
         alt: "Seventons Software",
