@@ -17,7 +17,7 @@ export const HeroSection = () => {
     <div className="relative overflow-hidden -mt-14 min-h-screen">
       <section className="container w-full h-screen -my-10 max-h-screen flex items-center">
         <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32">
-          <div className="text-center space-y-8 relative z-10 glassomorphism py-10">
+          <div className="text-center space-y-8 relative z-10 reflection glassomorphism glow py-10">
             <div className="max-w-screen-md mx-auto text-center text-4xl md:text-6xl font-bold">
               <h1>Empower Your Business with Data</h1>
             </div>
