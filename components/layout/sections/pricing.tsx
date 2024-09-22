@@ -7,7 +7,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Check, X } from "lucide-react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { Check, InfoIcon, X } from "lucide-react";
 import Link from "next/link";
 
 enum PopularPlan {
@@ -118,14 +124,38 @@ export const PricingSection = () => {
   ];
 
   const allServices = [
-    "Data Cleaning",
-    "Data Integration",
-    "Data Analysis",
-    "Interactive Dashboards",
-    "Automation Services",
-    "Custom Software Development",
-    "Consultation Services",
-    "Data Audit",
+    {
+      label: "Data Cleaning",
+      description: "Ensure your data is accurate and reliable.",
+    },
+    {
+      label: "Data Integration",
+      description: "Combine data from multiple sources into a unified view.",
+    },
+    {
+      label: "Data Analysis",
+      description: "In-depth analysis to uncover insights and trends.",
+    },
+    {
+      label: "Interactive Dashboards",
+      description: "Custom dashboards for real-time data visualization.",
+    },
+    {
+      label: "Automation Services",
+      description: "Automate repetitive tasks to improve efficiency.",
+    },
+    {
+      label: "Custom Software Development",
+      description: "Tailored software solutions for your unique needs.",
+    },
+    {
+      label: "Consultation Services",
+      description: "Expert advice on data strategy and management.",
+    },
+    {
+      label: "Data Audit",
+      description: "Comprehensive review of your data infrastructure.",
+    },
   ];
 
   return (
@@ -156,11 +186,11 @@ export const PricingSection = () => {
               }) => (
                 <Card
                   key={title}
-                  className={
+                  className={`flex flex-col ${
                     popular === PopularPlan?.YES
                       ? "drop-shadow-xl glow reflection shadow-black/10 dark:shadow-white/10 border-[1.5px] border-primary lg:scale-[1.1]"
                       : "glow"
-                  }
+                  }`}
                 >
                   <CardHeader>
                     <CardTitle className="pb-2">{title}</CardTitle>
@@ -186,8 +216,8 @@ export const PricingSection = () => {
                     </div>
                   </CardContent>
 
-                  <CardFooter>
-                    <Link href="#contact">
+                  <CardFooter className="flex-1">
+                    <Link href="#contact" className="mt-auto">
                       <Button
                         variant={
                           popular === PopularPlan?.YES ? "default" : "secondary"
@@ -235,11 +265,13 @@ export const PricingSection = () => {
         <div className="overflow-x-auto">
           <table className="w-full border-collapse" role="table">
             <thead>
-              <tr className="">
+              <tr>
                 <th className="border px-4 py-2 text-left">Service</th>
+
                 {planss.map((plan) => (
                   <th key={plan.name} className="border px-4 py-2 text-left">
                     <div className="font-bold">{plan.name}</div>
+
                     <div className="font-normal">{plan.price}</div>
                     <div className="text-sm text-white text-opacity-60 font-light">
                       {plan.description}
@@ -249,22 +281,36 @@ export const PricingSection = () => {
               </tr>
             </thead>
             <tbody>
-              {allServices.map((service, index) => (
-                <tr key={service} className={index % 2 === 0 ? "" : ""}>
-                  <td className="border px-4 py-2 font-medium">{service}</td>
+              {allServices.map(({ label, description }, index) => (
+                <tr key={label} className={index % 2 === 0 ? "" : ""}>
+                  <td className="border px-4 py-2 font-medium">
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <div className="flex cursor-pointer items-center">
+                            <p>{label}</p>
+                            <InfoIcon className="w-4 h-4 ml-2 text-white text-opacity-40" />
+                          </div>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                          <p>{description}</p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </td>
                   {planss.map((plan: any) => (
                     <td
-                      key={`${plan.name}-${service}`}
+                      key={`${plan.name}-${label}`}
                       className="border px-4 py-2 text-center"
                     >
-                      {typeof plan.services[service] === "boolean" ? (
-                        plan.services[service] ? (
+                      {typeof plan.services[label] === "boolean" ? (
+                        plan.services[label] ? (
                           <Check className="inline-block w-5 h-5 text-green-500" />
                         ) : (
                           <X className="inline-block w-5 h-5 text-red-500" />
                         )
                       ) : (
-                        <span>{plan.services[service]}</span>
+                        <span>{plan.services[label]}</span>
                       )}
                     </td>
                   ))}
@@ -294,6 +340,32 @@ export const PricingSection = () => {
               </tr>
             </tbody>
           </table>
+        </div>
+        <div className="mt-4">
+          <h3 className="text-xl font-bold">Notes</h3>
+          <div className="flex md:flex-row flex-col gap-4 justify-between mt-2">
+            <div>
+              <strong className="text-lg">Customization Available</strong>
+              <p className="text-white text-opacity-60">
+                Prices listed are starting points. Final pricing may vary based
+                on the complexity and scope of your project.
+              </p>
+            </div>
+            <div>
+              <strong className="text-lg">Bundle Discounts</strong>
+              <p className="text-white text-opacity-60">
+                Save more by combining multiple services. Contact us for a
+                personalized package. Flexible Payment Terms: We offer flexible
+                payment options to suit your budget.
+              </p>
+            </div>
+            <div>
+              <strong className="text-lg">Taxes</strong>
+              <p className="text-white text-opacity-60">
+                All prices are in USD. Taxes may apply based on your location.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

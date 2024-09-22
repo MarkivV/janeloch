@@ -30,7 +30,7 @@ export const TeamSection = () => {
         </Card> */}
         <div className="flex-1 flex flex-col justify-center items-end">
           <h3 className="text-lg">
-            <h4 className="text-3xl font-bold">Vlad Makarov</h4>
+            <h4 className="text-3xl font-bold">Volodymyr Markiv</h4>
             <h5 className="text-white text-opacity-60">Founder & CEO</h5>
             <p className="mt-4">
               Founder and CEO of SevenTons Software, Volodymyr is the visionary
