@@ -100,7 +100,7 @@ const plans: PlanProps[] = [
   {
     title: "Professional Plan",
     popular: 1,
-    price: "$350",
+    price: "$399",
     description: "",
     buttonText: "Get started",
     benefitList: [
@@ -417,11 +417,11 @@ export const PricingSection = () => {
               <tbody>
                 {services.map(({ service, description, price }) => (
                   <tr key={service}>
-                    <td className="border px-4 py-2 font-medium">{service}</td>
-                    <td className="border px-4 py-2 font-medium">
+                    <td className="border px-4 py-2 font-light">{service}</td>
+                    <td className="border px-4 py-2 font-light">
                       {description}
                     </td>
-                    <td className="border px-4 py-2 font-medium">{price}</td>
+                    <td className="border px-4 py-2 font-light">{price}</td>
                   </tr>
                 ))}
               </tbody>
