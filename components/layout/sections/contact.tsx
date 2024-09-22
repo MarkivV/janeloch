@@ -33,7 +33,7 @@ const formSchema = z.object({
   firstName: z.string().min(2).max(255),
   lastName: z.string().min(2).max(255),
   email: z.string().email(),
-  plan: z.string().min(2).max(255),
+  plan: z.string().min(1).max(255),
   message: z.string(),
 });
 
@@ -202,6 +202,7 @@ export const ContactSection = () => {
                             <SelectItem value="Enterprise Plan">
                               Enterprise Plan
                             </SelectItem>
+                            <SelectItem value="-">-</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
