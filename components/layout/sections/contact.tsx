@@ -114,7 +114,7 @@ export const ContactSection = () => {
                 <div className="font-bold">Mail US</div>
               </div>
 
-              <div>info@seventonssoftware.com</div>
+              <div>support@seventons.com</div>
             </div>
 
             <div>
