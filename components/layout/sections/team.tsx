@@ -10,7 +10,7 @@ export const TeamSection = () => {
         </h2>
 
         <h2 className="text-3xl md:text-4xl text-center font-bold">
-          The Company Dream Team
+          Head of Operations
         </h2>
       </div>
 
