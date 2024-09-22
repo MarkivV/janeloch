@@ -25,7 +25,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Clock, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -46,7 +46,7 @@ export const ContactSection = () => {
       firstName: "",
       lastName: "",
       email: "",
-      plan: "Growth Plan",
+      plan: "Professional Plan",
       message: "",
     },
   });
@@ -116,18 +116,6 @@ export const ContactSection = () => {
 
               <div>support@seventons.com</div>
             </div>
-
-            <div>
-              <div className="flex gap-2">
-                <Clock />
-                <div className="font-bold">Visit us</div>
-              </div>
-
-              <div>
-                <div>Monday - Friday</div>
-                <div>9AM - 6PM</div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -178,7 +166,7 @@ export const ContactSection = () => {
                         <FormControl>
                           <Input
                             type="email"
-                            placeholder="info@seventonssoftware.com"
+                            placeholder="mail@example.com"
                             {...field}
                           />
                         </FormControl>
@@ -205,14 +193,14 @@ export const ContactSection = () => {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="Starter Plan">
-                              Starter Plan
+                            <SelectItem value="Basic Plan">
+                              Basic Plan
                             </SelectItem>
-                            <SelectItem value="Growth Plan">
-                              Growth Plan
+                            <SelectItem value="Professional Plan">
+                              Professional Plan
                             </SelectItem>
-                            <SelectItem value="Premium Plan">
-                              Premium Plan
+                            <SelectItem value="Enterprise Plan">
+                              Enterprise Plan
                             </SelectItem>
                           </SelectContent>
                         </Select>

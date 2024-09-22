@@ -30,13 +30,66 @@ interface PlanProps {
   benefitList: string[];
 }
 
+const services = [
+  {
+    service: "Data Cleaning",
+    description: "Ensure your data is accurate and reliable.",
+    price: "Starting at $250 per data source",
+  },
+  {
+    service: "Data Integration",
+    description: "Combine data from multiple sources into a unified view.",
+    price: "Starting at $400 per integration",
+  },
+  {
+    service: "Data Analysis",
+    description: "In-depth analysis to uncover insights and trends.",
+    price: "Starting at $500 per project",
+  },
+  {
+    service: "Interactive Dashboards",
+    description: "Custom dashboards for real-time data visualization.",
+    price: "Starting at $600 per dashboard",
+  },
+  {
+    service: "Automation Services",
+    description: "Automate repetitive tasks to improve efficiency.",
+    price: "Starting at $750 per process",
+  },
+  {
+    service: "Custom Software Development",
+    description: "Tailored software solutions for your unique needs.",
+    price: "Starting at $1,000 per project",
+  },
+  {
+    service: "Consultation Services",
+    description: "Expert advice on data strategy and management.",
+    price: "$100 per hour",
+  },
+  {
+    service: "Data Audit",
+    description: "Comprehensive review of your data infrastructure.",
+    price: "$500 per audit",
+  },
+  {
+    service: "Training and Workshops",
+    description: "On-site or virtual sessions to empower your team.",
+    price: "Starting at $300 per session",
+  },
+  {
+    service: "Technical Support",
+    description: "One-time assistance and troubleshooting.",
+    price: "$75 per incident",
+  },
+];
+
 const plans: PlanProps[] = [
   {
-    title: "Starter Plan",
+    title: "Basic Plan",
     popular: 0,
     price: "$199",
     description: "",
-    buttonText: "Start Starter Plan",
+    buttonText: "Get started",
     benefitList: [
       "Data Cleaning (up to 2 sources)",
       "Basic Data Integration",
@@ -45,7 +98,7 @@ const plans: PlanProps[] = [
     ],
   },
   {
-    title: "Growth Plan",
+    title: "Professional Plan",
     popular: 1,
     price: "$350",
     description: "",
@@ -59,7 +112,7 @@ const plans: PlanProps[] = [
     ],
   },
   {
-    title: "Premium Plan",
+    title: "Enterprise Plan",
     popular: 0,
     price: "from $699",
     description: "",
@@ -262,7 +315,7 @@ export const PricingSection = () => {
         <h2 className="text-3xl font-bold text-center mb-8">
           Our Services Plans
         </h2>
-        <div className="overflow-x-auto">
+        <div className="overflow-x-auto mt-4">
           <table className="w-full border-collapse" role="table">
             <thead>
               <tr>
@@ -289,7 +342,7 @@ export const PricingSection = () => {
                         <TooltipTrigger asChild>
                           <div className="flex cursor-pointer items-center">
                             <p>{label}</p>
-                            <InfoIcon className="w-4 h-4 ml-2 text-white text-opacity-40" />
+                            <InfoIcon className="w-4 h-4 ml-2 hidden lg:block text-white text-opacity-40" />
                           </div>
                         </TooltipTrigger>
                         <TooltipContent>
@@ -341,7 +394,39 @@ export const PricingSection = () => {
             </tbody>
           </table>
         </div>
-        <div className="mt-4">
+        <div className="mt-12">
+          <h3 className="text-xl font-bold mt-4">
+            Revised One-Time Service Pricing
+          </h3>
+          <h4 className="mt-2 text-white text-opacity-60">
+            We understand the importance of providing high-quality services that
+            are also budget-friendly. At SevenTons Software, we&apos;re
+            committed to offering cost-effective solutions without compromising
+            on excellence. Below is our updated pricing table with more
+            affordable rates to better accommodate your needs.
+          </h4>
+          <div className="my-4 overflow-x-auto">
+            <table className="w-full border-collapse" role="table">
+              <thead>
+                <tr>
+                  <th className="border px-4 py-2 text-left">Service</th>
+                  <th className="border px-4 py-2 text-left">Description</th>
+                  <th className="border px-4 py-2 text-left">Price (USD)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {services.map(({ service, description, price }) => (
+                  <tr key={service}>
+                    <td className="border px-4 py-2 font-medium">{service}</td>
+                    <td className="border px-4 py-2 font-medium">
+                      {description}
+                    </td>
+                    <td className="border px-4 py-2 font-medium">{price}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
           <h3 className="text-xl font-bold">Notes</h3>
           <div className="flex md:flex-row flex-col gap-4 justify-between mt-2">
             <div>
