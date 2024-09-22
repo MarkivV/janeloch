@@ -10,10 +10,11 @@ import { Component8 } from "@/components/charts/component8";
 import { Component9 } from "@/components/charts/component9";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export const HeroSection = () => {
   return (
-    <div className="relative overflow-hidden -mt-14">
+    <div className="relative overflow-hidden -mt-14 min-h-screen">
       <section className="container w-full h-screen -my-10 max-h-screen flex items-center">
         <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20 md:py-32">
           <div className="text-center space-y-8 relative z-10 glassomorphism py-10">
@@ -26,10 +27,12 @@ export const HeroSection = () => {
             </p>
 
             <div className="space-y-4 md:space-y-0 md:space-x-4">
-              <Button className="w-5/6 md:w-1/4 font-bold group/arrow">
-                Get Started
-                <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
-              </Button>
+              <Link href="#contact">
+                <Button className="w-5/6 md:w-1/4 font-bold group/arrow">
+                  Get Started
+                  <ArrowRight className="size-5 ml-2 group-hover/arrow:translate-x-1 transition-transform" />
+                </Button>
+              </Link>
             </div>
           </div>
         </div>

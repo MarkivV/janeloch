@@ -2,6 +2,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/layout/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from "@/lib/utils";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -33,6 +34,7 @@ export default function RootLayout({
         </ThemeProvider>
         <Toaster />
       </body>
+      <GoogleAnalytics gaId="G-KT35PPC4KJ" />
     </html>
   );
 }

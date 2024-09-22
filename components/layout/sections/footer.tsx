@@ -22,6 +22,7 @@ export const FooterSection = () => {
             <div>
               <Link
                 href="https://www.linkedin.com/company/seventons/posts/?feedView=all"
+                target="_blank"
                 className="opacity-60 hover:opacity-100"
               >
                 LinkedIn

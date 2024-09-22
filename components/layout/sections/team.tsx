@@ -1,7 +1,4 @@
-import GithubIcon from "@/components/icons/github-icon";
 import LinkedInIcon from "@/components/icons/linkedin-icon";
-import { Card, CardHeader } from "@/components/ui/card";
-import Image from "next/image";
 import Link from "next/link";
 
 export const TeamSection = () => {
@@ -17,8 +14,8 @@ export const TeamSection = () => {
         </h2>
       </div>
 
-      <div className="flex max-w-[1000px] sm:flex-row flex-col w-full mx-auto gap-16">
-        <Card className="flex-1 bg-muted/60 dark:bg-card flex flex-col h-full overflow-hidden group/hoverimg">
+      <div className="flex max-w-[1000px] sm:flex-row flex-col w-full mx-auto gap-16 mt-24">
+        {/* <Card className="flex-1 bg-muted/60 dark:bg-card flex flex-col h-full overflow-hidden group/hoverimg">
           <CardHeader className="p-0 gap-0">
             <div className="h-full overflow-hidden">
               <Image
@@ -30,7 +27,7 @@ export const TeamSection = () => {
               />
             </div>
           </CardHeader>
-        </Card>
+        </Card> */}
         <div className="flex-1 flex flex-col justify-center items-end">
           <h3 className="text-lg">
             <h4 className="text-3xl font-bold">Vlad Makarov</h4>
@@ -42,12 +39,13 @@ export const TeamSection = () => {
               approach drive the success of SevenTons Software in delivering
               exceptional value to clients.
             </p>
-            <div className="flex gap-4 mt-6 items-center">
-              <Link href="#" target="_blank">
+            <div className="flex gap-2 mt-4 -ml-2 items-center">
+              <Link
+                href="https://www.linkedin.com/in/volodymyr-markiv07/"
+                className="p-2"
+                target="_blank"
+              >
                 <LinkedInIcon className="ionicon fill-foreground w-10 h-10" />
-              </Link>
-              <Link href="#" target="_blank">
-                <GithubIcon className="ionicon fill-foreground w-10 h-10" />
               </Link>
             </div>
           </h3>
