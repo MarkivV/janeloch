@@ -139,7 +139,6 @@ export const PricingSection = () => {
         "Data Analysis": true,
         "Interactive Dashboards": false,
         "Automation Services": false,
-        "Custom Software Development": false,
         "Consultation Services": "2 hours/month",
         "Data Audit": "Quarterly",
       },
@@ -154,7 +153,6 @@ export const PricingSection = () => {
         "Data Analysis": true,
         "Interactive Dashboards": true,
         "Automation Services": "1 process/month",
-        "Custom Software Development": false,
         "Consultation Services": "5 hours/month",
         "Data Audit": "Monthly",
       },
@@ -169,7 +167,6 @@ export const PricingSection = () => {
         "Data Analysis": true,
         "Interactive Dashboards": true,
         "Automation Services": true,
-        "Custom Software Development": true,
         "Consultation Services": "Unlimited",
         "Data Audit": "On-demand",
       },
@@ -196,10 +193,6 @@ export const PricingSection = () => {
     {
       label: "Automation Services",
       description: "Automate repetitive tasks to improve efficiency",
-    },
-    {
-      label: "Custom Software Development",
-      description: "Tailored software solutions for your unique needs",
     },
     {
       label: "Consultation Services",
