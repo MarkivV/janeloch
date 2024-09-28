@@ -34,17 +34,17 @@ const services = [
   {
     service: "Data Cleaning",
     description: "Ensure your data is accurate and reliable",
-    price: "Starting at $150 per data source",
+    price: "Starting at $99 per data source",
   },
   {
     service: "Data Integration",
     description: "Combine data from multiple sources into a unified view",
-    price: "Starting at $200 per integration",
+    price: "Starting at $125 per integration",
   },
   {
     service: "Data Analysis",
     description: "In-depth analysis to uncover insights and trends",
-    price: "Starting at $375 per project",
+    price: "Starting at $325 per project",
   },
   {
     service: "Interactive Dashboards",
@@ -54,22 +54,32 @@ const services = [
   {
     service: "Automation Services",
     description: "Automate repetitive tasks to improve efficiency",
-    price: "Starting at $350 per process",
+    price: "Starting at $375 per process",
+  },
+  {
+    service: "Custom Reports",
+    description: "Tailored reports to meet your specific business needs",
+    price: "Starting at $150 per report",
   },
   {
     service: "Consultation Services",
     description: "Expert advice on data strategy and management",
-    price: "$55 per hour",
+    price: "$60 per hour",
   },
   {
     service: "Data Audit",
     description: "Comprehensive review of your data infrastructure",
-    price: "Starting at $300 per audit",
+    price: "Starting at $350 per audit",
+  },
+  {
+    service: "Data Security Compliance",
+    description: "Ensure your data processes meet industry standards",
+    price: "Starting at $500 per compliance assessment",
   },
   {
     service: "Technical Support",
     description: "One-time assistance and troubleshooting",
-    price: "$75 per incident",
+    price: "$80 per incident",
   },
 ];
 
