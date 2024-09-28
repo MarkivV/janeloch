@@ -194,9 +194,8 @@ export const PricingSection = () => {
       },
     },
   ];
-};
 
-const allServices = [
+  const allServices = [
     {
       label: "Data Cleaning",
       description: "Ensure your data is accurate and reliable",
