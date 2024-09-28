@@ -221,6 +221,22 @@ export const PricingSection = () => {
       label: "Data Audit",
       description: "Comprehensive review of your data infrastructure",
     },
+    {
+      label: "Custom Reports",
+      description: "Tailored reports to meet your specific business needs",
+    },
+    {
+      label: "Technical Support",
+      description: "One-time assistance and troubleshooting",
+    },
+    {
+      label: "Reports",
+      description: "Frequency of reports provided",
+    },
+    {
+      label: "Data Security Compliance",
+      description: "Ensure your data processes meet industry standards",
+    },
   ];
 
   return (
