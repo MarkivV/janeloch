@@ -83,8 +83,10 @@ const plans: PlanProps[] = [
     benefitList: [
       "Data Cleaning (up to 2 sources)",
       "Basic Data Integration",
+      "Basic Data Analysis",
       "Monthly Reports",
-      "Email Support",
+      "Quarterly Data Audits",
+      "2 hours of consultation per month"
     ],
   },
   {
@@ -94,11 +96,13 @@ const plans: PlanProps[] = [
     description: "",
     buttonText: "Get started",
     benefitList: [
-      "Advanced Data Cleaning (up to 3 sources)",
+      "Advanced Data Cleaning (up to 5 sources)",
       "Comprehensive Data Integration",
+      "Advanced Data Analysis",
       "Bi-weekly Reports",
       "1 Automation Process",
       "Interactive Dashboard",
+      "4 hours of consultation per month",
     ],
   },
   {
@@ -110,9 +114,12 @@ const plans: PlanProps[] = [
     benefitList: [
       "Comprehensive Data Management",
       "Full Data Integration",
+      "Unlimited Data Sources",
+      "Advanced Data Analysis",
       "On-demand BI Reports",
-      "Up to 3 Automation Processes",
+      "Automation Processes",
       "Interactive Dashboards",
+      "Custom Reporting and Analytics",
     ],
   },
 ];
