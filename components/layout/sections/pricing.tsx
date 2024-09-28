@@ -396,7 +396,7 @@ export const PricingSection = () => {
                         className="w-full"
                       >
                         {plan.name === "Enterprise"
-                          ? "Contact Sales"
+                          ? "Get Started"
                           : "Get Started"}
                       </Button>
                     </Link>
