@@ -194,6 +194,7 @@ export const PricingSection = () => {
       },
     },
   ];
+};
 
 const allServices = [
     {
