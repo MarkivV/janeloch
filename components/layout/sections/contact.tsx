@@ -25,9 +25,11 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Mail } from "lucide-react";
+import { Mail, PaperclipIcon, X } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+
+const MAX_FILE_SIZE = 5_000_000; // 5mb
 
 const formSchema = z.object({
   firstName: z.string().min(2).max(255),
@@ -35,6 +37,10 @@ const formSchema = z.object({
   email: z.string().email(),
   plan: z.string().min(1).max(255),
   message: z.string(),
+  file: z.any().refine((file) => {
+    if (!file) return true;
+    return file?.[0]?.size <= MAX_FILE_SIZE;
+  }, `Max image size is 5MB.`),
 });
 
 export type FormSchema = z.infer<typeof formSchema>;
@@ -48,6 +54,7 @@ export const ContactSection = () => {
       email: "",
       plan: "Professional Plan",
       message: "",
+      file: null,
     },
   });
 
@@ -57,9 +64,24 @@ export const ContactSection = () => {
     toast({
       title: "Loading...",
     });
+
+    const files = [];
+    if (values.file) {
+      files.push({
+        filename: values.file?.[0]?.name,
+        content: Buffer.from(await values.file?.[0].arrayBuffer()).toString(
+          "base64"
+        ),
+        contentType: values.file?.[0]?.type,
+      });
+    }
+
     const res = await fetch("/api/contact", {
       method: "POST",
-      body: JSON.stringify(values),
+      body: JSON.stringify({
+        ...values,
+        attachments: files,
+      }),
     });
     if (res.ok) {
       form.reset();
@@ -73,6 +95,8 @@ export const ContactSection = () => {
       });
     }
   }
+
+  const file = form.getValues("file")?.[0];
 
   return (
     <section id="contact" className="container py-12 sm:py-16">
@@ -233,7 +257,51 @@ export const ContactSection = () => {
                   />
                 </div>
 
-                <Button className="mt-4">Send message</Button>
+                <div className="flex flex-col gap-1.5">
+                  <div className="flex items-center gap-4">
+                    {form.getValues("file") === null ? (
+                      <label
+                        htmlFor="file"
+                        className="px-4 cursor-pointer w-fit flex gap-2 py-2 hover:bg-white hover:bg-opacity-10 transition-colors rounded-lg"
+                      >
+                        <PaperclipIcon className="w-6 h-6" />
+                        Attach file
+                      </label>
+                    ) : (
+                      <div
+                        onClick={() => {
+                          form.reset({ file: null });
+                        }}
+                        className="px-4 cursor-pointer w-fit flex gap-2 py-2 hover:bg-white hover:bg-opacity-10 transition-colors rounded-lg"
+                      >
+                        <X className="w-6 h-6" />
+                        Remove file
+                      </div>
+                    )}
+                    {!file?.name && (
+                      <input
+                        id="file"
+                        type="file"
+                        {...form.register("file")}
+                        hidden
+                      />
+                    )}
+                    {file && (
+                      <span className="text-sm text-primary">{file.name}</span>
+                    )}
+                  </div>
+
+                  {typeof form?.formState?.errors?.file?.message ===
+                    "string" && (
+                    <div className="text-red-500 text-sm">
+                      {form?.formState?.errors?.file?.message}
+                    </div>
+                  )}
+                </div>
+
+                <Button disabled={form.formState.isSubmitting} className="mt-2">
+                  Send message
+                </Button>
               </form>
             </Form>
           </CardContent>

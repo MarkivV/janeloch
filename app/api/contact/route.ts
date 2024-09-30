@@ -2,7 +2,8 @@ import { FormSchema } from "@/components/layout/sections/contact";
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
-  const { firstName, lastName, email, plan, message } =
+  // @ts-ignore
+  const { firstName, lastName, email, plan, message, attachments } =
     (await req.json()) as FormSchema;
   let transporter = nodemailer.createTransport({
     service: "gmail",
@@ -22,6 +23,12 @@ export async function POST(req: Request) {
         <p>${email},</p>
         <p>${message}</p>
       `,
+      attachments: (attachments || []).map((attachment: any) => ({
+        filename: attachment.filename,
+        content: Buffer.from(attachment.content, "base64"),
+        contentType: attachment.contentType,
+        encoding: "base64",
+      })),
     });
 
     return new Response("Sent", { status: 200 });
