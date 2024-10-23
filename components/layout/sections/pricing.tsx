@@ -96,7 +96,7 @@ const plans: PlanProps[] = [
       "Basic Data Analysis",
       "Monthly Reports",
       "Quarterly Data Audits",
-      "2 hours of consultation per month"
+      "2 hours of consultation per month",
     ],
   },
   {
@@ -148,7 +148,7 @@ export const PricingSection = () => {
         "Interactive Dashboards": false,
         "Automation Services": false,
         "Technical Support": false,
-        "Reports": "Monthly",
+        Reports: "Monthly",
         "Data Security Compliance": false,
         "Consultation Services": "Up to 2 hour/month",
         "Data Audit": "Quarterly",
@@ -166,7 +166,7 @@ export const PricingSection = () => {
         "Interactive Dashboards": true,
         "Automation Services": "1 process/month",
         "Technical Support": true,
-        "Reports": "Bi-weekly",
+        Reports: "Bi-weekly",
         "Data Security Compliance": true,
         "Consultation Services": "Up to 5 hours/month",
         "Data Audit": "Monthly",
@@ -184,7 +184,7 @@ export const PricingSection = () => {
         "Interactive Dashboards": true,
         "Automation Services": "Unlimited",
         "Technical Support": true,
-        "Reports": "On-demand",
+        Reports: "On-demand",
         "Data Security Compliance": true,
         "Consultation Services": "On-demand",
         "Data Audit": "On-demand",
@@ -241,7 +241,10 @@ export const PricingSection = () => {
 
   return (
     <div>
-      <section className="container z-10 py-12 sm:py-16">
+      <section
+        id="pricing"
+        className="container z-10 scroll-mt-12 py-12 sm:py-16"
+      >
         <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
           Pricing
         </h2>

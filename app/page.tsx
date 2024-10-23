@@ -9,6 +9,8 @@ import { TeamSection } from "@/components/layout/sections/team";
 
 export const metadata = {
   title: "Seventons Software",
+  keywords:
+    "data management, business automation, data analysis, data cleaning, data integration, interactive dashboards, consultation services, data audit, technical support, sevenTons software, seventons, small business",
   description:
     "SevenTons Software offers affordable data management and automation for small and medium businesses. Unlock insights, automate processes, and grow with our cost-effective solutions",
   openGraph: {

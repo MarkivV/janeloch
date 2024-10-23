@@ -99,7 +99,7 @@ export const ContactSection = () => {
   const file = form.getValues("file")?.[0];
 
   return (
-    <section id="contact" className="container py-12 sm:py-16">
+    <section id="contact" className="container scroll-mt-12 py-12 sm:py-16">
       <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <div className="mb-4">

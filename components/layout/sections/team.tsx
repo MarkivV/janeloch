@@ -3,7 +3,10 @@ import Link from "next/link";
 
 export const TeamSection = () => {
   return (
-    <section id="team" className="container lg:w-[75%] py-12 sm:py-16">
+    <section
+      id="team"
+      className="container scroll-mt-12 lg:w-[75%] py-12 sm:py-16"
+    >
       <div className="text-center mb-8">
         <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
           Team
